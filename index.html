@@ -8,9 +8,9 @@
     <meta name="description" content="Bringing Your Portrait to 3D Presence">
     <meta name="keywords" content="3D Avatar, Human Reconstruction, Computer Vision, Graphics">
     <!-- Open Graph tags for social media -->
-    <meta property="og:title" content="ComGS">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="">
+    <meta property="og:title" content="Bringing Your Portrait to 3D Presence">
+    <meta property="og:description" content="Bringing Your Portrait to 3D Presence">
+    <meta property="og:image" content="img/teaser.jpg">
     
     <title>Bringing Your Portrait to 3D Presence</title>
     
@@ -74,7 +74,12 @@
         }
         
         .hero-section {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: radial-gradient(circle at 20% 20%, 
+                rgba(255, 200, 255, 0.6) 0%, 
+                rgba(140, 200, 255, 0.5) 40%, 
+                rgba(151, 171, 241, 0.4) 100%
+            ),
+            linear-gradient(135deg, #b1cffc 0%, #cf74fd 100%);
             padding: 4rem 0;
             border-radius: 0 0 var(--border-radius) var(--border-radius);
         }
@@ -352,34 +357,6 @@
 </head>
 
 <body>
-    <!-- Navigation Bar
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">ComGS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#abstract">Abstract</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#method">Method</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#comparison">Comparison</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#syncom">SynCom</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#phone-captured">Phone-Captured</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
 
     <!-- Hero Section -->
     <section class="hero-section" id="home">
@@ -389,7 +366,7 @@
                     <h1 class="mb-4">Bringing Your Portrait to 3D Presence</h1>
                     <div class="author-links" style="max-width: 70%; margin: 0 auto; text-align: center;">
                         <h5 class="mb-3"> 
-                            <a href="https://zjwsite.github.io/" target="_blank">Jiawei Zhang</a><sup>1</sup>,
+                            <a href="https://zjwsite.github.io/" target="_blank">Jiawei Zhang</a><sup>1,2</sup>,
                             <a href="https://lei65537.github.io/" target="_blank">Lei Chu</a><sup>2</sup>,
                             <a href="https://www.microsoft.com/en-us/research/people/jiahali/" target="_blank">Jiahao Li</a><sup>2</sup>,
                             <a href="https://openreview.net/profile?id=%7EZhenyu_Zang1" target="_blank">Zhenyu Zang</a><sup>2</sup>,
@@ -409,15 +386,29 @@
             </div>
 
             <div class="text-center mt-4">
-                <a href="" class="btn btn-dark mx-2" target="_blank" style="background-color: #343a40; border-color: #343a40;">
+                <!-- Paper with arXiv link -->
+                <a href="https://arxiv.org/abs/2511.22553" 
+                class="btn btn-dark mx-2" 
+                target="_blank" 
+                style="background-color: #343a40; border-color: #343a40;">
                     <i class="fas fa-file-pdf mr-2"></i>Paper
                 </a>
-                <a href="" class="btn btn-dark mx-2" target="_blank" style="background-color: #343a40; border-color: #343a40;">
+
+                <!-- Code: popup -->
+                <a href="javascript:void(0);" 
+                onclick="alert('Code will be released before 2025/12/10.');"
+                class="btn btn-dark mx-2" 
+                style="background-color: #343a40; border-color: #343a40;">
                     <i class="fab fa-github mr-2"></i>Code
                 </a>
-                <!-- <a href="" class="btn btn-dark mx-2" target="_blank" style="background-color: #343a40; border-color: #343a40;">
-                    <i class="fas fa-database mr-2"></i>Dataset
-                </a> -->
+
+                <!-- Tracker: popup -->
+                <a href="javascript:void(0);" 
+                onclick="alert('Tracker will be released before 2025/12/10.');"
+                class="btn btn-dark mx-2" 
+                style="background-color: #343a40; border-color: #343a40;">
+                    <i class="fas fa-cog mr-2"></i>Tracker
+                </a>
             </div>
         </div>
     </section>
@@ -495,7 +486,6 @@
                         </div>
                         
                         <div class="method-overview-content bg-white shadow-sm rounded-bottom pt-4 px-4">
-                            <!-- <h4 class="mb-3"><span class="text-primary">Realistic 3D Object-Scene Composition Pipeline</span></h4> -->
                             <p class="method-text">
                                 We address three key bottlenecks: reconstruction representation for 3D avatar, insufficient data, and unstable mesh estimation.
                             </p>
@@ -534,7 +524,6 @@
                                 <div id="method-drawer" class="method-drawer">
                                     <div class="card shadow-sm mt-3">
                                         <div class="card-body">
-                                            <!-- <h4 class="text-primary mb-3">Inverse Rendering with Surface Octahedral Probes (SOPs).</h4> -->
                                             <img src="img/tracker.jpg" alt="Reconstruction Process" class="img-fluid">
 
                                             <p class="text-justify">
@@ -617,7 +606,7 @@
         </div>
     </section>
 
-    <!-- Comparison Section -->
+    <!-- Self Reenactment Section -->
     <section id="comparison" class="py-5">
         <div class="container">
             <div class="row">
@@ -628,66 +617,54 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- Scene Selection Buttons -->
+
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="text-center">
-                        <div class="btn-group btn-group-lg" role="group" aria-label="Scene Selection">
-                            <button type="button" class="btn btn-primary active" id="scene-bottle">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Self Reenactment View Selection">
+                            <button type="button"
+                                    class="btn btn-primary active self-reenact-btn"
+                                    data-src="img/videos/self_reenact/upper_body/self-reenact_x264.mp4">
                                 Upper-Body
                             </button>
-                            <button type="button" class="btn btn-secondary" id="scene-kettle">
+                            <button type="button"
+                                    class="btn btn-secondary self-reenact-btn"
+                                    data-src="img/videos/self_reenact/head_portrait/self-reenact-head_x264.mp4">
                                 Head-Portrait
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div id="video-container" class="mt-4">
+
+            <div id="self-video-container" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="card h-100 video-wrapper">
                             <div class="loading-spinner">
                                 <div class="spinner-border text-primary" role="status"></div>
                             </div>
-                            <video width="100%" playsinline muted preload class="comparison-video" id="final-comparison-video">
-                                <source src="img/videos/self_reenact/upper_body/self-reenact_x264.mp4" type="video/mp4" 
-                                        data-bottle="img/videos/self_reenact/upper_body/self-reenact_x264.mp4"
-                                        data-kettle="img/videos/self_reenact/head_portrait/self-reenact-head_x264.mp4">
+                            <video width="100%" playsinline muted preload
+                                class="comparison-video" id="self-reenact-video">
+                                <source src="img/videos/self_reenact/upper_body/self-reenact_x264.mp4" type="video/mp4">
                             </video>
-                            <div id="progress-container" style="width: 100%; height: 5px; background-color: #eee; margin-top: 10px;">
-                                <!-- <div id="progress-bar" style="width: 0; height: 100%; background-color: #007bff;"></div> -->
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <script>
-                var video = document.getElementById('final-comparison-video');
-                var progressBar = document.getElementById('progress-bar');
-
-                video.addEventListener('timeupdate', function() {
-                    var percentage = (video.currentTime / video.duration) * 100;
-                    progressBar.style.width = percentage + '%';
-                });
-            </script>
-            
-            
-
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="video-controls text-center">
                         <div class="d-flex align-items-center justify-content-center">
-                            <button id="play-pause-btn" class="btn btn-primary">
+                            <button id="self-play-pause-btn" class="btn btn-primary">
                                 <i class="fas fa-play mr-1"></i> Play
                             </button>
                             <div class="mx-3 flex-grow-1" style="max-width: 70%;">
-                                <input type="range" id="video-progress" class="form-control-range" min="0" max="100" value="0" step="0.1">
+                                <input type="range" id="self-video-progress" class="form-control-range"
+                                    min="0" max="100" value="0" step="0.1">
                             </div>
-                            <span id="time-display" class="text-monospace">0:00 / 0:00</span>
+                            <span id="self-time-display" class="text-monospace">0:00 / 0:00</span>
                         </div>
                     </div>
                 </div>
@@ -698,7 +675,6 @@
     <!-- Novel View Synthesis Section -->
     <section id="novel-view" class="py-5 bg-light">
         <div class="container">
-            <!-- 标题 -->
             <div class="row">
                 <div class="col-12">
                     <div class="text-center mb-4">
@@ -708,7 +684,6 @@
                 </div>
             </div>
 
-            <!-- 视角选择按钮 -->
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="text-center">
@@ -733,7 +708,6 @@
                 </div>
             </div>
 
-            <!-- 视频区域 -->
             <div id="novel-video-container" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -743,7 +717,6 @@
                             </div>
                             <video width="100%" playsinline muted preload
                                 class="comparison-video" id="novel-video">
-                                <!-- 默认显示 Head-Portrait -->
                                 <source src="img/videos/novel_view/novel_view_synthesis_head_x264.mp4"
                                         type="video/mp4">
                             </video>
@@ -752,7 +725,6 @@
                 </div>
             </div>
 
-            <!-- 控制条 -->
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="video-controls text-center">
@@ -772,93 +744,9 @@
         </div>
     </section>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var novelVideo         = document.getElementById('novel-video');
-        var novelPlayPauseBtn  = document.getElementById('novel-play-pause-btn');
-        var novelVideoProgress = document.getElementById('novel-video-progress');
-        var novelTimeDisplay   = document.getElementById('novel-time-display');
-        var novelViewButtons   = document.querySelectorAll('.novel-view-btn');
-
-        function formatTime(seconds) {
-            seconds = Math.floor(seconds || 0);
-            var m = Math.floor(seconds / 60);
-            var s = seconds % 60;
-            return m + ':' + (s < 10 ? '0' + s : s);
-        }
-
-        function updateTimeDisplay() {
-            var current = novelVideo.currentTime || 0;
-            var total   = novelVideo.duration || 0;
-            novelTimeDisplay.textContent = formatTime(current) + ' / ' + formatTime(total);
-        }
-
-        // 更新时间和滑条
-        novelVideo.addEventListener('timeupdate', function () {
-            if (novelVideo.duration) {
-                var percentage = (novelVideo.currentTime / novelVideo.duration) * 100;
-                novelVideoProgress.value = percentage;
-            } else {
-                novelVideoProgress.value = 0;
-            }
-            updateTimeDisplay();
-        });
-
-        // 拖动进度条
-        novelVideoProgress.addEventListener('input', function () {
-            if (!novelVideo.duration) return;
-            var newTime = (novelVideoProgress.value / 100) * novelVideo.duration;
-            novelVideo.currentTime = newTime;
-        });
-
-        // 播放 / 暂停
-        novelPlayPauseBtn.addEventListener('click', function () {
-            if (novelVideo.paused) {
-                novelVideo.play();
-                novelPlayPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-            } else {
-                novelVideo.pause();
-                novelPlayPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-            }
-        });
-
-        // 切换视角
-        novelViewButtons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                // 切按钮样式
-                novelViewButtons.forEach(function (b) {
-                    b.classList.remove('btn-primary', 'active');
-                    b.classList.add('btn-secondary');
-                });
-                this.classList.remove('btn-secondary');
-                this.classList.add('btn-primary', 'active');
-
-                // 切视频 src
-                var newSrc = this.getAttribute('data-src');
-                if (newSrc) {
-                    novelVideo.pause();
-                    var sourceTag = novelVideo.querySelector('source');
-                    sourceTag.src = newSrc;
-                    novelVideo.load();
-                    novelVideoProgress.value = 0;
-                    novelTimeDisplay.textContent = '0:00 / 0:00';
-                    // 自动播放新视频
-                    novelVideo.play();
-                    novelPlayPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-                }
-            });
-        });
-
-        // metadata 加载后初始化时间显示
-        novelVideo.addEventListener('loadedmetadata', updateTimeDisplay);
-    });
-    </script>
-
-
     <!-- Cross Reenactment Section -->
     <section id="cross-reenactment" class="py-5">
         <div class="container">
-            <!-- 标题 -->
             <div class="row">
                 <div class="col-12">
                     <div class="text-center mb-4">
@@ -868,7 +756,6 @@
                 </div>
             </div>
             
-            <!-- seq 选择按钮 -->
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="text-center">
@@ -894,7 +781,6 @@
                 </div>
             </div>
 
-            <!-- 视频 + 外层卡片 -->
             <div id="cross-video-container" class="mt-4">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -904,16 +790,13 @@
                             </div>
                             <video width="100%" playsinline muted preload 
                                 class="comparison-video" id="cross-video">
-                                <!-- 默认展示 seq-1 -->
                                 <source src="./img/videos/cross_reenact/cross_reenact_4_x264.mp4" type="video/mp4">
                             </video>
-                            <!-- 这里不再加第二个进度条，避免和下面的 slider 重复 -->
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 播放控制 / 进度条 -->
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="video-controls text-center">
@@ -933,91 +816,126 @@
         </div>
     </section>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var crossVideo          = document.getElementById('cross-video');
-        var crossPlayPauseBtn   = document.getElementById('cross-play-pause-btn');
-        var crossVideoProgress  = document.getElementById('cross-video-progress');
-        var crossTimeDisplay    = document.getElementById('cross-time-display');
-        var seqButtons          = document.querySelectorAll('.cross-seq-btn');
+    <!-- Generalization Ability Section -->
+    <section id="syncom" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-4">
+                        <h2>Generalization Ability</h2>
+                        <div class="section-divider my-3"></div>
+                    </div>
+                </div>
+            </div>
 
-        function formatTime(seconds) {
-            seconds = Math.floor(seconds || 0);
-            var m = Math.floor(seconds / 60);
-            var s = seconds % 60;
-            return m + ':' + (s < 10 ? '0' + s : s);
-        }
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 video-wrapper">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                            </div>
+                        </div>
+                        <video class="card-img-top" width="100%" playsinline autoplay loop muted preload="auto">
+                            <source src="img/videos/generalization/text_x264.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Text-Generated</h5>
+                        </div>
+                    </div>
+                </div>
 
-        function updateTimeDisplay() {
-            var current = crossVideo.currentTime || 0;
-            var total   = crossVideo.duration || 0;
-            crossTimeDisplay.textContent = formatTime(current) + ' / ' + formatTime(total);
-        }
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 video-wrapper">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                            </div>
+                        </div>
+                        <video class="card-img-top" width="100%" playsinline autoplay loop muted preload="auto">
+                            <source src="img/videos/generalization/image_x264.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image-Editing</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        // 更新进度条 & 时间显示
-        crossVideo.addEventListener('timeupdate', function () {
-            if (crossVideo.duration) {
-                var percentage = (crossVideo.currentTime / crossVideo.duration) * 100;
-                crossVideoProgress.value = percentage;
-            } else {
-                crossVideoProgress.value = 0;
-            }
-            updateTimeDisplay();
-        });
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 video-wrapper">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                            </div>
+                        </div>
+                        <video class="card-img-top" width="100%" playsinline autoplay loop muted preload="auto">
+                            <source src="img/videos/generalization/ood_x264.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Out-of-Distribution-1</h5>
+                        </div>
+                    </div>
+                </div>
 
-        // 拖动进度条 seek
-        crossVideoProgress.addEventListener('input', function () {
-            if (!crossVideo.duration) return;
-            var newTime = (crossVideoProgress.value / 100) * crossVideo.duration;
-            crossVideo.currentTime = newTime;
-        });
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 video-wrapper">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary" role="status">
+                            </div>
+                        </div>
+                        <video class="card-img-top" width="100%" playsinline autoplay loop muted preload="auto">
+                            <source src="img/videos/generalization/ood2_x264.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Out-of-Distribution-2</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // 播放 / 暂停
-        crossPlayPauseBtn.addEventListener('click', function () {
-            if (crossVideo.paused) {
-                crossVideo.play();
-                crossPlayPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-            } else {
-                crossVideo.pause();
-                crossPlayPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-            }
-        });
+    <!-- Ethics Statement Section -->
+    <section id="ethics-statement" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-4">
+                        <h2>Ethics Statement</h2>
+                        <div class="section-divider my-3"></div>
+                    </div>
+                </div>
+            </div>
 
-        // 切换 seq
-        seqButtons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                // 切按钮样式
-                seqButtons.forEach(function (b) {
-                    b.classList.remove('btn-primary', 'active');
-                    b.classList.add('btn-secondary');
-                });
-                this.classList.remove('btn-secondary');
-                this.classList.add('btn-primary', 'active');
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p class="text-justify">
+                                Our work focuses on reconstructing animatable 3D human avatars from single images.
+                                All training data used in this project are purely <strong>synthetic</strong>,
+                                without relying on real-world personal photos or biometric information. This
+                                reduces the risk of privacy violations and unauthorized data collection.
+                            </p>
+                            <p class="text-justify">
+                                Nevertheless, we recognize that 3D avatar reconstruction technology can be misused,
+                                for example to create identity-mimicking content, deepfakes, or other forms of
+                                impersonation. To mitigate these risks, our implementation is intended
+                                solely for research purposes, and we strongly discourage any use that violates
+                                applicable laws, platform policies, or individual rights.
+                            </p>
+                            <p class="text-justify mb-0">
+                                We encourage future deployments of such systems to follow strict data protection
+                                principles, obtain informed consent when real data are involved, and provide clear
+                                transparency about how avatars are generated and used. These measures are essential
+                                to foster responsible development of 3D avatar technologies and to maintain public trust.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // 切视频 src
-                var newSrc = this.getAttribute('data-src');
-                if (newSrc) {
-                    crossVideo.pause();
-                    var sourceTag = crossVideo.querySelector('source');
-                    sourceTag.src = newSrc;
-                    crossVideo.load();
-                    crossVideoProgress.value = 0;
-                    crossTimeDisplay.textContent = '0:00 / 0:00';
-                    // 自动播放新视频
-                    crossVideo.play();
-                    crossPlayPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-                }
-            });
-        });
-
-        // 初始时间显示
-        crossVideo.addEventListener('loadedmetadata', updateTimeDisplay);
-    });
-    </script>
-
-
-
-    
     <!-- Back to top button -->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
@@ -1032,20 +950,21 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             'use strict';
-            
-            // Method Section Drawer Animation
+
+            /* =========================
+             *  Method Section Drawer
+             * ========================= */
             const drawerToggle = document.getElementById('method-drawer-toggle');
             const methodDrawer = document.getElementById('method-drawer');
-            
+
             if (drawerToggle && methodDrawer) {
                 const toggleButton = drawerToggle.querySelector('button');
-                
-                // Preload the image
-                let preloadImage = new Image();
+
+                // 预加载 tracking 图片
+                const preloadImage = new Image();
                 preloadImage.src = "img/tracker.jpg";
-                
-                // Toggle drawer on button click
-                toggleButton.addEventListener('click', function(e) {
+
+                toggleButton.addEventListener('click', function() {
                     if (methodDrawer.classList.contains('open')) {
                         methodDrawer.classList.remove('open');
                         toggleButton.classList.remove('active');
@@ -1057,262 +976,342 @@
                     }
                 });
             }
-            
-            // DOM Elements
-            const video = document.querySelector('.comparison-video');
-            const teaserVideos = document.querySelectorAll('.card-img-top');
-            const progressBar = document.getElementById('video-progress');
-            const playPauseBtn = document.getElementById('play-pause-btn');
-            const timeDisplay = document.getElementById('time-display');
-            const bottleBtn = document.getElementById('scene-bottle');
-            const kettleBtn = document.getElementById('scene-kettle');
+
+            /* =========================
+             *  Back to top 按钮
+             * ========================= */
             const backToTopBtn = document.getElementById('backToTop');
-            
-            // State variables
-            let isPlaying = false;
-            let currentScene = 'bottle'; // Default scene
-            let isVideoReady = false;
-            
-            // Utility functions
-            const formatTime = (timeInSeconds) => {
-                const minutes = Math.floor(timeInSeconds / 60);
-                const seconds = Math.floor(timeInSeconds % 60).toString().padStart(2, '0');
-                return `${minutes}:${seconds}`;
-            };
-            
-            // Loading management
-            const handleVideoLoading = (videoElement) => {
-                const wrapper = videoElement.closest('.video-wrapper');
-                if (!wrapper) return;
-                
-                const spinner = wrapper.querySelector('.loading-spinner');
-                if (!spinner) return;
-
-                const hideSpinner = () => {
-                    spinner.style.display = 'none';
-                    videoElement.classList.add('loaded');
-                    isVideoReady = true;
-                    initializeControls();
-                };
-
-                // Hide spinner immediately if video is already loaded
-                if (videoElement.readyState >= 4) { // HAVE_ENOUGH_DATA
-                    hideSpinner();
-                } else {
-                    // Add event listeners for loading states
-                    ['loadeddata', 'canplaythrough', 'playing'].forEach(event => {
-                        videoElement.addEventListener(event, hideSpinner, { once: true });
-                    });
-                    
-                    // Fallback timeout
-                    setTimeout(hideSpinner, 2000);
-                }
-            };
-
-            // Initialize loading handling for all videos
-            document.querySelectorAll('video').forEach(handleVideoLoading);
-            
-            // Initialize video loading listeners
-            if (video) {
-                // Check if video is already loaded
-                if (video.readyState >= 2) { // HAVE_CURRENT_DATA or better
-                    isVideoReady = true;
-                    initializeControls();
-                }
-                
-                // Listen for video load events
-                video.addEventListener('loadeddata', function() {
-                    isVideoReady = true;
-                    initializeControls();
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('visible');
+                    } else {
+                        backToTopBtn.classList.remove('visible');
+                    }
                 });
-                
-                // Prevent autoplay
-                video.pause();
+
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
             }
-            
-            // Scene switching
-            const updateSceneButtons = (scene) => {
-                if (scene === 'bottle') {
-                    bottleBtn.classList.add('active', 'btn-primary');
-                    bottleBtn.classList.remove('btn-secondary');
-                    
-                    kettleBtn.classList.remove('active', 'btn-primary');
-                    kettleBtn.classList.add('btn-secondary');
-                } else {
-                    kettleBtn.classList.add('active', 'btn-primary');
-                    kettleBtn.classList.remove('btn-secondary');
-                    
-                    bottleBtn.classList.remove('active', 'btn-primary');
-                    bottleBtn.classList.add('btn-secondary');
-                }
-            };
-            
-            const changeScene = (scene) => {
-                currentScene = scene;
-                
-                // Stop video if playing
-                if (isPlaying && video) {
-                    video.pause();
-                    playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                    isPlaying = false;
-                }
-                
-                // Reset progress
-                progressBar.value = 0;
-                
-                // Update video source and reload
-                if (video) {
-                    const source = video.querySelector('source');
-                    const newSrc = source.getAttribute(`data-${scene}`);
-                    source.setAttribute('src', newSrc);
-                    video.load();
-                    
-                    // Wait for video to load
-                    video.addEventListener('loadeddata', function() {
-                        initializeControls();
-                    }, { once: true });
-                }
-            };
-            
-            // Scene button event listeners
-            bottleBtn.addEventListener('click', () => {
-                if (currentScene !== 'bottle') {
-                    changeScene('bottle');
-                    updateSceneButtons('bottle');
-                }
-            });
-            
-            kettleBtn.addEventListener('click', () => {
-                if (currentScene !== 'kettle') {
-                    changeScene('kettle');
-                    updateSceneButtons('kettle');
-                }
-            });
-            
-            // Video play/pause handler
-            const handlePlayPause = (event) => {
-                // If clicked on video while playing, just pause
-                if (event && event.target && event.target.tagName === 'VIDEO' && isPlaying) {
-                    video.pause();
-                    playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                    isPlaying = false;
-                    return;
-                }
-                
-                if (isPlaying) {
-                    // Pause video
-                    video.pause();
-                    playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                } else {
-                    // Play video if ready
-                    if (video && video.readyState >= 2) {
-                        const playPromise = video.play();
-                        if (playPromise !== undefined) {
-                            playPromise.then(() => {
-                                playPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-                            }).catch(error => {
-                                console.log('Autoplay prevented:', error);
-                                playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                                isPlaying = false;
-                                return;
-                            });
-                        } else {
-                            playPauseBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
-                        }
-                    }
-                }
-                
-                isPlaying = !isPlaying;
-            };
-            
-            // Initialize video controls
-            function initializeControls() {
-                if (!video) return;
-                
-                // Use video's duration as reference
-                const duration = video.duration || 0;
-                
-                // Update time display
-                timeDisplay.textContent = `0:00 / ${formatTime(duration)}`;
-                
-                // Set up play/pause button
-                playPauseBtn.removeEventListener('click', handlePlayPause);
-                playPauseBtn.addEventListener('click', handlePlayPause);
-                
-                // Progress bar controls
-                progressBar.addEventListener('input', function() {
-                    // Pause if playing
-                    if (isPlaying) {
-                        video.pause();
-                        playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                        isPlaying = false;
-                    }
-                    
-                    // Set video time
-                    const newTime = (progressBar.value / 100) * duration;
-                    video.currentTime = newTime;
-                    
-                    // Update time display
-                    timeDisplay.textContent = `${formatTime(newTime)} / ${formatTime(duration)}`;
-                });
-                
-                // Update progress bar as video plays
-                video.addEventListener('timeupdate', function() {
-                    if (video.duration) {
-                        const progress = (video.currentTime / video.duration) * 100;
-                        progressBar.value = progress;
-                        timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
-                    }
-                });
-                
-                // Handle video ended
-                video.addEventListener('ended', function() {
-                    playPauseBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
-                    isPlaying = false;
-                    progressBar.value = 0;
-                    timeDisplay.textContent = `0:00 / ${formatTime(duration)}`;
-                });
-                
-                // Add click handler to video
-                video.removeEventListener('click', handlePlayPause);
-                video.addEventListener('click', handlePlayPause);
-            };
-            
-            // Back to top button functionality
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
-                }
-            });
-            
-            backToTopBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Enable smooth scrolling for all anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href') !== '#') {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
+
+            /* =========================
+             *  Anchor 平滑滚动
+             * ========================= */
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#') {
+                        const target = document.querySelector(href);
                         if (target) {
+                            e.preventDefault();
                             target.scrollIntoView({ behavior: 'smooth' });
                         }
                     }
                 });
             });
-            
-            // Initialize lazy loading for videos
+
+            /* =========================
+             *  视频加载时的 loading 动画
+             * ========================= */
+            function setupVideoLoading(video) {
+                const wrapper = video.closest('.video-wrapper');
+                if (!wrapper) return;
+
+                const spinner = wrapper.querySelector('.loading-spinner');
+                if (!spinner) return;
+
+                function hideSpinner() {
+                    spinner.style.display = 'none';
+                    video.classList.add('loaded');
+                }
+
+                // 如果已经有数据了，直接隐藏
+                if (video.readyState >= 2) { // HAVE_CURRENT_DATA
+                    hideSpinner();
+                    return;
+                }
+
+                ['loadeddata', 'canplay', 'canplaythrough', 'playing'].forEach(function(ev) {
+                    video.addEventListener(ev, hideSpinner, { once: true });
+                });
+
+                // 兜底：2 秒后无论如何都隐藏
+                setTimeout(hideSpinner, 2000);
+            }
+
+            document.querySelectorAll('video').forEach(setupVideoLoading);
+
+            /* =========================
+             *  通用时间格式化
+             * ========================= */
+            function formatTime(seconds) {
+                seconds = Math.floor(seconds || 0);
+                var m = Math.floor(seconds / 60);
+                var s = seconds % 60;
+                return m + ':' + (s < 10 ? '0' + s : s);
+            }
+
+            /* =========================
+             *  通用视频播放器封装
+             *  config = {
+             *    videoId, playPauseId, progressId, timeDisplayId
+             *  }
+             * ========================= */
+            function setupVideoPlayer(config) {
+                const video       = document.getElementById(config.videoId);
+                const playBtn     = document.getElementById(config.playPauseId);
+                const progress    = document.getElementById(config.progressId);
+                const timeDisplay = document.getElementById(config.timeDisplayId);
+
+                if (!video || !playBtn || !progress || !timeDisplay) return;
+
+                function updateTime() {
+                    const cur = video.currentTime || 0;
+                    const dur = video.duration   || 0;
+
+                    timeDisplay.textContent =
+                        formatTime(cur) + ' / ' + formatTime(dur);
+
+                    if (dur) {
+                        progress.value = (cur / dur) * 100;
+                    } else {
+                        progress.value = 0;
+                    }
+                }
+
+                // 视频时间变化 / 元数据加载时更新显示
+                video.addEventListener('timeupdate', updateTime);
+                video.addEventListener('loadedmetadata', updateTime);
+
+                video.addEventListener('ended', function() {
+                    playBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
+                    progress.value = 0;
+                    updateTime();
+                });
+
+                // 播放 / 暂停按钮
+                playBtn.addEventListener('click', function() {
+                    if (video.paused) {
+                        const p = video.play();
+                        if (p && p.then) {
+                            p.then(function() {
+                                playBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
+                            }).catch(function() {
+                                // 自动播放被阻止，不做处理
+                            });
+                        } else {
+                            playBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
+                        }
+                    } else {
+                        video.pause();
+                        playBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
+                    }
+                });
+
+                // 点击视频本身也能播放 / 暂停
+                video.addEventListener('click', function() {
+                    playBtn.click();
+                });
+
+                // 拖动进度条
+                progress.addEventListener('input', function() {
+                    if (!video.duration) return;
+                    const newTime = (progress.value / 100) * video.duration;
+                    video.currentTime = newTime;
+                    updateTime();
+                });
+
+                // 如果一开始元数据就已经好了，初始化一下时间显示
+                if (video.readyState >= 2) {
+                    updateTime();
+                }
+            }
+
+            /* =========================
+            *  Self Reenactment 播放器
+            * ========================= */
+            setupVideoPlayer({
+                videoId:       'self-reenact-video',
+                playPauseId:   'self-play-pause-btn',
+                progressId:    'self-video-progress',
+                timeDisplayId: 'self-time-display'
+            });
+
+            const selfVideo   = document.getElementById('self-reenact-video');
+            const selfButtons = document.querySelectorAll('.self-reenact-btn');
+
+            if (selfVideo && selfButtons.length) {
+                const selfSource = selfVideo.querySelector('source');
+
+                function setSelfActive(btn) {
+                    // 切按钮样式
+                    selfButtons.forEach(function(b) {
+                        b.classList.remove('btn-primary', 'active');
+                        b.classList.add('btn-secondary');
+                    });
+
+                    btn.classList.add('btn-primary', 'active');
+                    btn.classList.remove('btn-secondary');
+
+                    // 切视频源
+                    const newSrc = btn.getAttribute('data-src');
+                    if (!newSrc || !selfSource) return;
+
+                    const wasPlaying = !selfVideo.paused;
+                    const progress   = document.getElementById('self-video-progress');
+                    const playBtn    = document.getElementById('self-play-pause-btn');
+                    const timeLabel  = document.getElementById('self-time-display');
+
+                    selfVideo.pause();
+                    selfSource.src = newSrc;
+                    selfVideo.load();
+
+                    // 重置进度和时间显示
+                    if (progress)  progress.value = 0;
+                    if (timeLabel) timeLabel.textContent = '0:00 / 0:00';
+                    if (playBtn)   playBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
+
+                    // 如果切换前在播放，保持播放状态
+                    if (wasPlaying) {
+                        const p = selfVideo.play();
+                        if (p && p.then) {
+                            p.then(function() {
+                                if (playBtn) {
+                                    playBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
+                                }
+                            }).catch(function(){});
+                        }
+                    }
+                }
+
+                // 按钮绑定
+                selfButtons.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        setSelfActive(this);
+                    });
+                });
+            }
+
+            setupVideoPlayer({
+                videoId:       'novel-video',
+                playPauseId:   'novel-play-pause-btn',
+                progressId:    'novel-video-progress',
+                timeDisplayId: 'novel-time-display'
+            });
+
+            const novelVideo   = document.getElementById('novel-video');
+            const novelButtons = document.querySelectorAll('.novel-view-btn');
+
+            if (novelVideo && novelButtons.length) {
+                const novelSource = novelVideo.querySelector('source');
+
+                function setNovelActive(btn) {
+                    novelButtons.forEach(function(b) {
+                        b.classList.remove('btn-primary', 'active');
+                        b.classList.add('btn-secondary');
+                    });
+
+                    btn.classList.add('btn-primary', 'active');
+                    btn.classList.remove('btn-secondary');
+
+                    const newSrc = btn.getAttribute('data-src');
+                    if (!newSrc || !novelSource) return;
+
+                    const wasPlaying = !novelVideo.paused;
+                    const progress   = document.getElementById('novel-video-progress');
+                    const playBtn    = document.getElementById('novel-play-pause-btn');
+                    const timeLabel  = document.getElementById('novel-time-display');
+
+                    novelVideo.pause();
+                    novelSource.src = newSrc;
+                    novelVideo.load();
+
+                    if (progress)  progress.value = 0;
+                    if (timeLabel) timeLabel.textContent = '0:00 / 0:00';
+                    if (playBtn)   playBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
+
+                    if (wasPlaying) {
+                        novelVideo.play().then(function() {
+                            if (playBtn) {
+                                playBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
+                            }
+                        }).catch(function(){});
+                    }
+                }
+
+                novelButtons.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        setNovelActive(this);
+                    });
+                });
+            }
+
+            setupVideoPlayer({
+                videoId:       'cross-video',
+                playPauseId:   'cross-play-pause-btn',
+                progressId:    'cross-video-progress',
+                timeDisplayId: 'cross-time-display'
+            });
+
+            const crossVideo   = document.getElementById('cross-video');
+            const seqButtons   = document.querySelectorAll('.cross-seq-btn');
+
+            if (crossVideo && seqButtons.length) {
+                const crossSource = crossVideo.querySelector('source');
+
+                function setSeqActive(btn) {
+                    seqButtons.forEach(function(b) {
+                        b.classList.remove('btn-primary', 'active');
+                        b.classList.add('btn-secondary');
+                    });
+
+                    btn.classList.add('btn-primary', 'active');
+                    btn.classList.remove('btn-secondary');
+
+                    const newSrc = btn.getAttribute('data-src');
+                    if (!newSrc || !crossSource) return;
+
+                    const wasPlaying = !crossVideo.paused;
+                    const progress   = document.getElementById('cross-video-progress');
+                    const playBtn    = document.getElementById('cross-play-pause-btn');
+                    const timeLabel  = document.getElementById('cross-time-display');
+
+                    crossVideo.pause();
+                    crossSource.src = newSrc;
+                    crossVideo.load();
+
+                    if (progress)  progress.value = 0;
+                    if (timeLabel) timeLabel.textContent = '0:00 / 0:00';
+                    if (playBtn)   playBtn.innerHTML = '<i class="fas fa-play mr-1"></i> Play';
+
+                    if (wasPlaying) {
+                        crossVideo.play().then(function() {
+                            if (playBtn) {
+                                playBtn.innerHTML = '<i class="fas fa-pause mr-1"></i> Pause';
+                            }
+                        }).catch(function(){});
+                    }
+                }
+
+                seqButtons.forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        setSeqActive(this);
+                    });
+                });
+            }
+
+            /* =========================
+             *  可选：懒加载 data-lazy="true" 的视频
+             * ========================= */
             if ('IntersectionObserver' in window) {
-                const videoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
+                const videoObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             const video = entry.target;
                             const source = video.querySelector('source');
-                            if (source.dataset.src) {
+                            if (source && source.dataset.src) {
                                 source.src = source.dataset.src;
                                 video.load();
                                 videoObserver.unobserve(video);
@@ -1320,12 +1319,11 @@
                         }
                     });
                 }, { threshold: 0.1 });
-                
-                document.querySelectorAll('video[data-lazy="true"]').forEach(video => {
+
+                document.querySelectorAll('video[data-lazy="true"]').forEach(function(video) {
                     videoObserver.observe(video);
                 });
-            };
-
+            }
         });
     </script>
     <script src="js/teaser-examples.js"></script>
